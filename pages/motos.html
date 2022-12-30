@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar moto</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1>Todo Motos</h1>
+    </div>
+    <div id="descripcionWeb2">
+        <p>Todo lo relacionado con el mundo de las motocicletas</p>
+        <p>Encuentra aquí la moto de tus sueños!</p>
+        <a href="../index.html">Ir a inicio</a>
+        <a href="./accesorios.html">Comprar accesorios</a>
+    </div>
+    <div id="estructuraTienda">
+        <div class="columnaTienda" id="filtros">
+            <h2>Filtros</h2>
+            <input type="text" id="buscarMotos">
+            <h3>Buscar por precio</h3>
+            <p>Desde:</p>
+            <input type="text" id="desdeMotos">
+            <p>Hasta:</p>
+            <input type="text" id="desdeMotos">
+            <h3>Marcas:</h3>
+            <div class="checkFiltro">
+                <input type="checkbox" id="marcaMotos1" name="Yamaha" value="Yamaha">
+                <label for="Yamaha">Yamaha</label>
+                <input type="checkbox" id="marcaMotos2" name="Honda" value="Honda">
+                <label for="Honda">Honda</label>
+                <input type="checkbox" id="marcaMotos3" name="Suzuki" value="Suzuki">
+                <label for="Suzuki">Suzuki</label>
+            </div>
+            <h3>Categorías:</h3>
+            <div class="checkFiltro">
+                <input type="checkbox" id="cateMotos1" name="automaticas" value="automaticas">
+                <label for="automaticas">Automáticas</label>
+                <input type="checkbox" id="cateMotos2" name="enduro" value="enduro">
+                <label for="enduro">Enduro</label>
+                <input type="checkbox" id="cateMotos3" name="urbanas" value="urbanas">
+                <label for="urbanas">Urbanas</label>
+                <input type="checkbox" id="cateMotos4" name="altocilindraje" value="altocilindraje">
+                <label for="altocilindraje">Alto cilindraje</label>
+            </div>
+        </div>
+        <div class="columnaTienda" id="productos">
+            <h2>Motos disponibles</h2>
+            <div id="columnaMotos">
+            </div>
+        </div>
+        <div class="columnaTienda" id="carrito">
+            <h2>Carrito de compras</h2>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+#header{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px;
+    align-items: center;
+    justify-items: center;
+}
+#descripcionWeb{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 1%;
+}
+#menu{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 1%;
+    justify-items: center;
+}
+#menu h2{
+    text-align: center;
+}
+#menu img{
+    width: 100%;
+    height: 400px;
+}
+#menu a{
+    margin-left: 40%;
+}
+#descripcionWeb2{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 1%;
+}
+#estructuraTienda{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+.columnaTienda{
+    border-right: 1px solid;
+    text-align: center;
+}
+.checkFiltro{
+    display: block;
+}
+#columnaMotos{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 0.2%;
+    row-gap: 0.2%;
+    justify-content: space-evenly;
+    margin: 0px;
+}
+.cardMoto{
+    border-style: solid;
+    border-width: 1px;
+}
+.cardMoto img{
+    width: 90%;
+    height: 200px;
+}
