@@ -1523,14 +1523,13 @@ renderMotos(motos)
 let buscador = document.getElementById("buscarMotos")
 buscador.addEventListener("input", renderProFiltrados)
 let desde =document.getElementById("desdeMotos")
-desde.addEventListener("input",renderProFiltrados)
+desde.addEventListener(Number("input"),renderProFiltrados)
 
 function renderProFiltrados (e){
     let proFiltrado= 
     motos.filter(producto => producto.marca.toLowerCase().includes(buscador.value.toLowerCase()) || 
     producto.categoria.toLowerCase().includes(buscador.value.toLowerCase()) ||
-    producto.modelo.toLowerCase().includes(buscador.value.toLowerCase()) ||
-    (producto.precio>=desde.Number.value)
+    producto.modelo.toLowerCase().includes(buscador.value.toLowerCase())
     )
     renderMotos(proFiltrado)
 }
