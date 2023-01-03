@@ -1141,8 +1141,8 @@ function addCarritoAcce(e) {
             subtotal: prodBuscado.precio
         })
     }
-    rendCarrito(carrito)
     localStorage.setItem("carrito", JSON.stringify(carrito))
+    rendCarrito(carrito)
 }
 
 function rendCarrito(arrayDeProductos) {
@@ -1159,19 +1159,24 @@ function rendCarrito(arrayDeProductos) {
         `
     }
     let total = carrito.reduce((acc, valorActual) => acc + valorActual.subtotal, 0)
-    columnaCarrito.innerHTML += `
-    <h3>TOTAL: $${total.toFixed(2)}</h3>
-    <button class="boton" id="comprar">Comprar</button>
-    `
+    if (total > 0) {
+        columnaCarrito.innerHTML += `
+        <h3>TOTAL: $${total.toFixed(2)}</h3>
+        `
+    }
 }
 
 // Si el cliente ya compró lo que había en el carrito, se borra lo que se haya almacenado 
 // en el local storage dado que se presupone que el cliente no volverá a comprar exactamente
 // lo que ya compró
 
-let botonComprar = document.getElementById("comprar")
-botonComprar.addEventListener("click", () => {
+    let botonComprar = document.getElementById("comprar")
+    botonComprar.addEventListener("click", vaciarCarrito)
+
+function vaciarCarrito(e) {
+    console.log("Compra realizada")
+    alert("Compra realizada con éxito!\n\nGracias por confiar en TodoMotos para realizar sus compras!")
     localStorage.removeItem("carrito")
     carrito = []
     rendCarrito(carrito)
-})
+}
