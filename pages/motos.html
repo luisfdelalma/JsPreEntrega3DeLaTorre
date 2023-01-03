@@ -22,13 +22,15 @@
     <div id="estructuraTienda">
         <div class="columnaTienda" id="filtros">
             <h2>Filtros</h2>
+            <p>(Puedes buscar por marca, modelo o categoría)</p>
             <input type="text" id="buscarMotos">
             <h3>Buscar por precio</h3>
             <p>Desde:</p>
-            <input type="text" id="desdeMotos">
+            <input type="text" id="desdeMotos" value="0">
             <p>Hasta:</p>
-            <input type="text" id="desdeMotos">
-            <h3>Marcas:</h3>
+            <input type="text" id="hastaMotos" value="1000000">
+            <!-- PROXIMO DESARROLLO A MODO DE MEJORA PERSONAL NO REQUERIDA POR LA ACTIVIDAD -->
+            <!-- <h3>Marcas:</h3>
             <div class="checkFiltro">
                 <input type="checkbox" id="marcaMotos1" name="Yamaha" value="Yamaha">
                 <label for="Yamaha">Yamaha</label>
@@ -47,7 +49,7 @@
                 <label for="urbanas">Urbanas</label>
                 <input type="checkbox" id="cateMotos4" name="altocilindraje" value="altocilindraje">
                 <label for="altocilindraje">Alto cilindraje</label>
-            </div>
+            </div> -->
         </div>
         <div class="columnaTienda" id="productos">
             <h2>Motos disponibles</h2>
@@ -56,6 +58,7 @@
         </div>
         <div class="columnaTienda" id="carrito">
             <h2>Carrito de compras</h2>
+            <div id="columnaCarrito"></div>
         </div>
     </div>
     <script src="../script.js"></script>

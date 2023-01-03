@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,39 @@
     <title>Comprar accesorios</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
     <div id="header">
         <h1>Todo Motos</h1>
     </div>
     <div id="descripcionWeb2">
         <p>Todo lo relacionado con el mundo de las motocicletas</p>
+        <p>Encuentra aquí los accesorios para tu moto!</p>
+        <a href="../index.html">Ir a inicio</a>
+        <!-- <a href="./motos.html">Comprar motos</a> -->
     </div>
-    <script src="../script.js"></script>
+    <div id="estructuraTienda">
+        <div class="columnaTienda" id="filtros">
+            <h2>Filtros</h2>
+            <p>(Puedes buscar por marca, referencia o categoría)</p>
+            <input type="text" id="buscarAccesorios">
+            <h3>Buscar por precio</h3>
+            <p>Desde:</p>
+            <input type="text" id="desdeAccesorios" value="0">
+            <p>Hasta:</p>
+            <input type="text" id="hastaAccesorios" value="1000000">
+        </div>
+        <div class="columnaTienda" id="productos">
+            <h2>Accesorios disponibles</h2>
+            <div id="columnaAccesorios">
+            </div>
+        </div>
+        <div class="columnaTienda" id="carrito">
+            <h2>Carrito de compras</h2>
+            <div id="columnaCarrito"></div>
+        </div>
+    </div>
+    <script src="../scriptAcce.js"></script>
 </body>
+
 </html>
