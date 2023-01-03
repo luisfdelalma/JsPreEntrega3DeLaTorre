@@ -1073,7 +1073,7 @@ let accesorios = [
     }
 ]
 
-let carrito = []
+
 // -------------------------- SCRIPT DE SECCION DE ACCESORIOS ------------------------------
 // ----------------------------------------------------------------------------------------
 
@@ -1087,6 +1087,11 @@ desdeAcce.addEventListener("input", renderAcceFiltrados)
 let hastaAcce = document.getElementById("hastaAccesorios")
 hastaAcce.addEventListener("input", renderAcceFiltrados)
 
+let carrito = []
+if (localStorage.getItem("carrito")) {
+    carrito = JSON.parse(localStorage.getItem("carrito"))
+}
+rendCarrito(carrito)
 
 function renderAcceFiltrados(e) {
     let acceFiltrados =
@@ -1136,6 +1141,7 @@ function addCarritoAcce(e) {
             subtotal: prodBuscado.precio
         })
     }
+    localStorage.setItem("carrito", JSON.stringify(carrito))
     rendCarrito(carrito)
 }
 
@@ -1151,8 +1157,15 @@ function rendCarrito(arrayDeProductos) {
         </div>
         `
     }
-    let total = carrito.reduce((acc, valorActual)=>acc+valorActual.subtotal, 0)
-    columnaCarrito.innerHTML+=`
+    let total = carrito.reduce((acc, valorActual) => acc + valorActual.subtotal, 0)
+    columnaCarrito.innerHTML += `
     <h3>TOTAL: $${total.toFixed(2)}</h3>
+    <button class="boton" id="comprar">Comprar</button>
     `
 }
+let botonComprar = document.getElementById("comprar")
+botonComprar.addEventListener("click", () => {
+    localStorage.removeItem("carrito")
+    carrito = []
+    renderizarCarrito(carrito)
+})
