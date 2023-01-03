@@ -80,3 +80,12 @@
     width: 90%;
     height: 200px;
 }
+.elementoCarrito{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.elementoCarrito p{
+    text-align: left;
+    font-weight: 500;
+}
+

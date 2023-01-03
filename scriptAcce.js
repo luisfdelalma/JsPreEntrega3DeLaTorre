@@ -1141,8 +1141,8 @@ function addCarritoAcce(e) {
             subtotal: prodBuscado.precio
         })
     }
-    localStorage.setItem("carrito", JSON.stringify(carrito))
     rendCarrito(carrito)
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 function rendCarrito(arrayDeProductos) {
@@ -1150,10 +1150,11 @@ function rendCarrito(arrayDeProductos) {
     for (const producto of arrayDeProductos) {
         columnaCarrito.innerHTML += `
         <div class="elementoCarrito">
-        <p>Producto: ${producto.nombre}</p>
-        <p>Precio unitario: $${producto.precioUnitario}</p>
-        <p>Cantidad: ${producto.unidades}</p>
-        <p>Subtotal: $${producto.subtotal.toFixed(2)}</p>
+        <p><b>Producto:</b> ${producto.nombre}</p>
+        <p><b>Precio unitario:</b> $${producto.precioUnitario}</p>
+        <p><b>Cantidad:</b> ${producto.unidades}</p>
+        <p><b>Subtotal:</b> $${(producto.subtotal).toFixed(2)}</p>
+        <hr>
         </div>
         `
     }
@@ -1163,9 +1164,14 @@ function rendCarrito(arrayDeProductos) {
     <button class="boton" id="comprar">Comprar</button>
     `
 }
+
+// Si el cliente ya compró lo que había en el carrito, se borra lo que se haya almacenado 
+// en el local storage dado que se presupone que el cliente no volverá a comprar exactamente
+// lo que ya compró
+
 let botonComprar = document.getElementById("comprar")
 botonComprar.addEventListener("click", () => {
     localStorage.removeItem("carrito")
     carrito = []
-    renderizarCarrito(carrito)
+    rendCarrito(carrito)
 })
